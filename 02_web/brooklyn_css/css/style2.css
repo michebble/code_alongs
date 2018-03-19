@@ -1,0 +1,29 @@
+.container {
+  width: 900px;
+  border: 1px solid red;
+}
+
+.hero img {
+  width: 100%; /* percentage based on it's parent*/
+}
+
+.press a img{
+  float: left;
+  width: 25%;
+}
+
+main {
+  margin-bottom: 50px;
+}
+
+/*p a {
+  display: inline;
+  background-color: mistyrose;
+  margin: 50px;
+}*/
+
+/* a block element */
+
+/* an inline element */
+
+/* an inline-block element*/
