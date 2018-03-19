@@ -1,0 +1,40 @@
+
+
+/* searching by tags*/
+h1 {
+  color: red;
+}
+
+p {
+  background-color: mistyrose; 
+}
+/* search by id - id needs to be unique*/
+#threat {
+  font-size: 30px;
+}
+
+/* search by class*/
+/*.title {
+  color: purple;
+}*/
+
+/* descendent(all) selector, no comma*/
+article h1 {
+  color: purple;
+}
+
+/* direct child(specific, no grandchildren) selector*/
+article > p {
+  color: green;
+}
+
+/* Super specific, not great to use*/
+/*article footer > p.joy {
+ color: orange;
+}*/
+
+/* less specific, so better*/
+.joy {
+  color: orange;
+}
+
