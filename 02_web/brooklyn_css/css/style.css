@@ -1,0 +1,32 @@
+body {
+  margin: auto;
+  width: 90%;
+  color: darkgrey;
+  padding: 10px;
+}
+
+h3 {
+  color: grey;
+}
+
+p {
+  font-size: 13.5px;
+  width: 960px;
+}
+
+span {
+  color: lightblue;
+}
+
+.logo {
+  padding: 1px;
+  border: 3px solid grey;
+}
+
+a:link {
+ color: lightblue;
+}
+
+footer {
+  font-size: 12px;
+}
