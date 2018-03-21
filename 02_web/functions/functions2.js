@@ -54,9 +54,9 @@ console.log(transmogrifier(2,2,3))
 
 
 var wordReverse = function(string) {
-  var cutUp = string.split("")
+  var cutUp = string.split(" ")
   var reverse = cutUp.reverse()
-  return reverse.join("")
+  return reverse.join(" ")
 }
 
 console.log(wordReverse("A but tuba"))
