@@ -1,0 +1,51 @@
+
+/* id, class, tag*/
+
+/* px, pt, %, em*/
+
+/* 1em = 16px */
+/* 2em = 32px */
+/* base font size */
+
+body {
+  background-color: mistyrose;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+div {
+  min-height: 100px;
+  margin: 10px;
+  background-color: yellowgreen;
+  font-size: 3em;
+}
+
+img {
+  width: 100%
+}
+
+
+@media (min-width: 40em){
+
+  body {
+    background-color: hotpink;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  div {
+    width: 40%;
+  }
+}
+
+@media (min-width: 70em) {
+
+  body {
+    background-color: red;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
