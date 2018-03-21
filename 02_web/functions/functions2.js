@@ -8,14 +8,15 @@ var birthYear = 1984
 var currentYear = 2018
 
 var calculateAge = function(birthYear, currentYear) {
-  var ages = []
-  ages[0] = currentYear - birthYear
-  ages[1] = ages[0] - 1
-  var answer = "You are either " + ages[1] + " or " + ages[0]
+  var age = currentYear - birthYear
+  var ageBeforeBirthday = age - 1
+  var answer = "You are either " + ageBeforeBirthday + " or " + age
   return answer
 }
 
 console.log(calculateAge(birthYear, currentYear))
+console.log(calculateAge(1990, 2018))
+console.log(calculateAge(1956, 2018))
 
 
 //  2. Write a function `lengths` that accepts a single parameter as an argument, namely
@@ -25,7 +26,7 @@ console.log(calculateAge(birthYear, currentYear))
 var lengths = function(arrOfStrings) {
   var lengthOfStrings = []
   for (var i = 0; i < arrOfStrings.length; i++) {
-    lengthOfStrings[i] = arrOfStrings[i].length  
+    lengthOfStrings.push(arrOfStrings[i].length) 
   }
   return lengthOfStrings
 }
