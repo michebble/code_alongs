@@ -16,9 +16,37 @@
 </head>
 <body>
 
-  <div class="the-div">the div</div>
+  <h1>potato</h1>
 
-  <div>the otherdiv</div>
+  <div>
+    <h2>eggplant</h2>
+    <p>tomato</p>
+  </div>
   
+  <script>
+    var sayHello = function(name) {
+      console.log('hello ' + name + '! Welcome to lings cars.')
+    }
+
+    sayHello('blueberry')
+
+    var gentlyRemind = function(name) {
+      console.log('Dear ' + name + ', you owe me money. Do the right thing.')
+    }
+
+    var customers = ['mary', 'bob', 'banana']
+
+
+    var forEach = function(group ,message) {
+      for (var i = 0; i < group.length; i++) {
+      message(group[i]);
+      }
+    }
+
+    forEach(customers, sayHello);
+
+    forEach(customers, gentlyRemind);
+
+  </script>
 </body>
 </html>
