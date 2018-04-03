@@ -3,16 +3,16 @@ require 'pry'
 # how to get input
 puts 'Welcome to the guessing game.'
 puts 'Please guess a number between 1 and 10.'
-guess = gets.chomp   
+guess = gets.to_i  
 secret_number = rand(1..10) 
-binding.pry
-while guess.to_i != secret_number
-  if guess.to_i > secret_number
+
+while guess != secret_number
+  if guess > secret_number
     puts 'The secret number is less than that.'
-    guess = gets.chomp 
-  elsif guess.to_i < secret_number
+    guess = gets.to_i
+  elsif guess< secret_number
     puts 'The secret number is higher than that.'
-    guess = gets.chomp 
+    guess = gets.to_i
   end
 end
 
