@@ -22,7 +22,6 @@ first_name = 'Jack'
 last_name = 'Black'
 puts(first_name + '  ' + last_name)
 
-puts("hello #{first_name} #{last_name}")
+puts("hello #{first_name} #{last_name.upcase}") #interpolation
 
-print first_name
-print first_name
+PI = 3.14 #constant
