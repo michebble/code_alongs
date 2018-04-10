@@ -1,7 +1,17 @@
 <h1>goodfoodhunting</h1>
 
-<% @dishes.each do |dish|%>
-  <p><%= dish['name'] %></p>
-  <img src=<%= "#{dish['image_url']}"%> alt="<%= dish['name'] %>">
+<a href="/dishes/new">post new dish</a>
 
+<% @dishes.each do |dish|%>
+
+  <div class="card" style="width: 300px;">
+    <div class="card-divider">
+      <%= dish['name'] %>
+    </div>
+    <a href= "/dishes?id=<%=dish['id'] %>" ><img src="<%= dish['image_url']%>"></a>
+    <div class="card-section">
+      <h4>This is a card.</h4>
+      <p>It has an easy to override visual style, and is appropriately subdued.</p>
+    </div>
+  </div>
 <% end %>
