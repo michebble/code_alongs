@@ -30,15 +30,17 @@ end
 
 
 get "/dishes" do
-  sql = "SELECT * FROM dishes WHERE id = #{params[:id]};"
-  conn = PG.connect(dbname: 'goodfoodhunting')
-  query_result = conn.exec(sql)
+
+    sql = "SELECT * FROM dishes WHERE id = #{params[:id]};"
+    conn = PG.connect(dbname: 'goodfoodhunting')
+    query_result = conn.exec(sql)
+    
+    if query_result.first.nil?
+      redirect to('/')
+    end
+    @dishes = query_result.first
+    erb :dish
   
-  if query_result.first.nil?
-    redirect to('/')
-  end
-  @dishes = query_result.first
-  erb :dish
 end
 
 
