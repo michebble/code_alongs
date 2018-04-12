@@ -2,9 +2,13 @@
     <div class="card-divider">
       <%= @dishes['name'] %>
     </div>
-    <img src="<%= @dishes['image_url']%>">
+    <img class="img-fluid" src="<%= @dishes['image_url']%>">
     <div class="card-section">
-      <h4>This is a card.</h4>
-      <p>It has an easy to override visual style, and is appropriately subdued.</p>
+      <form action="/dishes" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" value="<%= @dishes['id']%>">
+        <button>Delete</button>
+      </form>
+      <a href="/dishes/<%= @dishes['id']%>/edit">edit</a>
     </div>
   </div>

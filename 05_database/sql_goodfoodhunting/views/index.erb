@@ -3,11 +3,12 @@
 <a href="/dishes/new">post new dish</a>
 
 <% @dishes.each do |dish|%>
-
-  <div class="card" style="width: 300px;">
-    <div class="card-divider">
-      <%= dish['name'] %>
+  <div class=".col-sm-">
+    <div class="card" style="width: 300px;">
+      <div class="card-divider">
+        <%= dish['name'] %>
+      </div>
+      <a href= "/dishes/<%=dish['id'] %>" ><img class="img-fluid" src="<%= dish['image_url']%>"></a>
     </div>
-    <a href= "/dishes?id=<%=dish['id'] %>" ><img src="<%= dish['image_url']%>"></a>
   </div>
 <% end %>
