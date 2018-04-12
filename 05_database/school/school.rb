@@ -10,19 +10,23 @@ class School
   end
 
   def add(student, grade)
-    if @db[grade] == nil
-      @db[grade] = Array.new
+    if @db[grade]
+      @db[grade] << student
+    else
+      @db[grade] = [student]
     end
-    @db[grade] << student
+
+    # @db[grade||= []
+    # @db[grade] << student
 
     # @db = Array(@db[:grade]).push student
   end
 
   def grade(grade)
-    if @db[grade] == nil
-      puts "No one is enrolled in grade #{grade}."
-    else
+    if @db[grade] 
       puts @db[grade].join(', ')
+    else
+      puts "No one is enrolled in grade #{grade}."
     end
   end
 
