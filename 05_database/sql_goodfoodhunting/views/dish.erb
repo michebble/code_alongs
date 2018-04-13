@@ -12,3 +12,18 @@
       <a href="/dishes/<%= @dishes['id']%>/edit">edit</a>
     </div>
   </div>
+</div>
+<form action="/comments" method="post">
+<input type="hidden" name="dish_id" value="<%= @dishes['id']%>">
+  <textarea name="content" ></textarea>
+  <button>Post Comment</button>
+</form>
+
+<div>
+  <% @comments.each do |comment| %>
+    <p> <%= comment['content'] %></p>
+
+  <% end %>
+
+
+</div>

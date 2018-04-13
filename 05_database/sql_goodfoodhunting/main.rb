@@ -46,6 +46,8 @@ get "/dishes/:id" do
     redirect to('/')
   end
   @dishes = query_result.first
+
+  @comments = run_query("SELECT * FROM comments WHERE dish_id = #{params[:id]};")
   erb :dish
   
 end
@@ -66,7 +68,12 @@ end
 
 put '/dishes/:id' do
   sql = "UPDATE dishes SET name = '#{ params[:name] }', image_url = '#{ params[:image_url]}' WHERE id = #{ params[:id] };"
-
   run_query(sql)
   redirect to("/dishes/#{params[:id]}") 
+end
+
+post '/comments' do
+  sql = "INSERT INTO comments (content, dish_id) VALUES ('#{params[:content]}', '#{params[:dish_id]}')"
+  run_query(sql)
+  redirect to("/dishes/#{params[:dish_id]}") 
 end
