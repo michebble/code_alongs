@@ -25,3 +25,19 @@ CREATE TABLE comments (
 );
 
 insert into comments (content, dish_id) values ('great', 6);
+
+CREATE TABLE users (
+  id SERIAL4 PRIMARY KEY,
+  email VARCHAR(100) NOT NULL,
+  password_digest VARCHAR(400) NOT NULL
+);
+
+alter table comments add colomn user_id INTEGER;
+
+CREATE TABLE likes (
+  id SERIAL4 PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  dish_id INTEGER NOT NULL,
+  FOREIGN KEY (dish_id) REFERENCES dishes (id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+);

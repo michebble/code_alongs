@@ -1,0 +1,14 @@
+
+
+<a href="/dishes/new">post new dish</a>
+
+<% @dishes.each do |dish|%>
+  <div class=".col-sm-">
+    <div class="card" style="width: 300px;">
+      <div class="card-divider">
+        <%= dish.name %>
+      </div>
+      <a href= "/dishes/<%= dish.id %>" ><img class="img-fluid" src="<%= dish.image_url %>"></a>
+    </div>
+  </div>
+<% end %>
