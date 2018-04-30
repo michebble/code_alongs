@@ -11,7 +11,7 @@
       </form>
       <a href="/dishes/<%= @dish.id %>/edit">edit</a>
       
-      <p>Likes count: <%= @dish.likes.count %></p>
+      <p>Likes count: <span class="likes-count"><%= @dish.likes.count %></span></p>
       <form action="/likes" method="post">
         <input type="hidden" name="dish_id" value="<%= @dish.id %>">
         <button class="like-btn" >Like</button>
@@ -40,12 +40,25 @@ console.log('js is back');
 var $likeBtn = $('.like-btn');
 $likeBtn.on('click', function(event){
   event.preventDefault();
+
+  var options = {
+    url: '/api/likes',
+    data: { dish_id: <%= @dish.id %> },
+    method: 'post'
+  }
+
+
+  $.ajax(options).done(function(res){
+    console.log(res);
+    $('.likes-count').text(res.likes_count)
+  })
+
 });
 
-var $comments = $('.comments-list p');
-$comments.on('click', function(){
-  console.log('comment clicked')
-});
+// var $comments = $('.comments-list p');
+// $comments.on('click', function(){
+//   console.log('comment clicked')
+// });
 
 // $comments.eq(0) selects first element as jquery element
 
