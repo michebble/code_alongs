@@ -1,0 +1,5 @@
+<% @sales.each do |sale| %>
+
+<p><%= link_to sale.description, sale, data: { turbolinks: false } %></p>
+
+<% end %>

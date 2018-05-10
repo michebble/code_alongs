@@ -1,0 +1,52 @@
+<p><%= @sale.description %></p>
+
+<p><%= @sale.address %></p>
+
+<% @sale.images.each do |image| %>
+  <img src="<%= image.url %>" alt="">
+<% end %>
+
+<div class="map" style="height: 200px;">
+
+</div>
+
+<form action="/sales/<%= @sale.id %>" method="post">
+   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="delete">
+  <button>delete</button>
+</form>
+
+<a href="/sales/<%= @sale.id%>/edit">edit</a>
+
+<script>
+  function initMap() {
+
+    var geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode({ address: '<%= @sale.address %>' }, function(results, status) {
+
+      if (status == 'OK') {
+        var latLng = results[0].geometry.location;
+
+        var map = new google.maps.Map(document.querySelector('.map'), {
+          zoom: 11,
+          center: latLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: latLng,
+          map: map
+        });
+      } else {
+        console.log('failed')
+      }
+
+    });
+
+  }
+
+  // initMap();
+
+</script>
+<script data-turbolinks-eval="false" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTrzql0pdZs-GLtUTuhqjRXjpCRwLU8sk&callback=initMap">
+</script>

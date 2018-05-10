@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Takemystuff</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'false' %>
+  </head>
+
+  <body>
+    <nav class="top">
+      <a href="/">home</a>
+      <a href="/sales">all sales</a>
+      <% if logged_in? %>
+        <a href="/">my sales</a>
+        <span>logged in as <%= current_user.email %></span>
+      <% end %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

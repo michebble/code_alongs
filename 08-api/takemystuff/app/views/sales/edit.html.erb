@@ -1,0 +1,19 @@
+
+<%= @sale.description %>
+
+<%= form_for @sale do |f| %>
+
+  <label for="">description</label>
+  <%= f.text_field :description %>
+
+  <label for="">address</label>
+  <%= f.text_field :address %>
+
+  <label for="">images</label>
+  <%= f.file_field :images, multiple: true %>
+
+  <button>update</button>
+
+<% end %>
+
+

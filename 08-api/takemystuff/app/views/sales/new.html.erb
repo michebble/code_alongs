@@ -1,0 +1,21 @@
+<%# form helpers - functions that generate html %>
+
+
+<%= form_for @sale do |f| %>
+
+  <label for="">description</label>
+  <%= f.text_field :description %>
+
+  <label for="">address</label>
+  <%= f.text_field :address %>
+
+  <label for="">images</label>
+  <%= f.file_field :images, multiple: true %>
+
+  <button>create sale</button>
+
+<% end %>
+
+
+<a href="/contact">contact me</a>
+<%= link_to 'about us', about_path %> <%# /rails/info/routes%>
