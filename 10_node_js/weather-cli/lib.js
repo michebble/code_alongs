@@ -5,4 +5,6 @@ var convertToCelsius = function(kelvin) {
   return celsius
 }
 
-module.exports = { convertToCelsius: convertToCelsius};
+module.exports = { 
+  convertToCelsius: convertToCelsius
+};
