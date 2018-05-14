@@ -4,10 +4,13 @@
 
 // write a CLI program that sums numbers passed in
 
-var numbers = process.argv;
+
 var output = 0;
-for (var i = 2; i < numbers.length; i++) {
-  output += Number(numbers[i]);
+
+debugger
+
+for (var i = 2; i < process.argv.length; i++) {
+  output += Number(process.argv[i]);
 }
 console.log(output);
 
